@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./css/normalize.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css" />
+  <link rel="stylesheet" href="./css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
+  <script defer src="./js/main.js"></script>
+  <title>skb.</title>
+</head>
+
+<body>
+  <header class="header">
+    <div class="container header-container">
+      <img class="header-logo" src="./img/logo.svg" alt="skb.">
+      <form>
+        <input class="header-input" type="text" placeholder="Введите запрос">
+      </form>
+    </div>
+  </header>
+
+  <main>
+    <div class="container clients-container load">
+      <h1 class="reset-title clients-title">Клиенты</h1>
+      <div class="loading-screen"><svg width="100" height="100" viewbox="0 0 100 100" fill="none"
+          xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M14.0002 50.0005C14.0002 69.8825 30.1182 86.0005 50.0002 86.0005C69.8822 86.0005 86.0002 69.8825 86.0002 50.0005C86.0002 30.1185 69.8823 14.0005 50.0003 14.0005C45.3513 14.0005 40.9082 14.8815 36.8282 16.4865"
+            stroke="#9873FF" stroke-width="8" stroke-miterlimit="10" stroke-linecap="round" />
+        </svg></div>
+      <table class="table">
+        <thead>
+          <tr class="table-header">
+            <th class="table-header-item table-header-id">ID<svg class="icon" width="8" height="8" viewbox="0 0 8 8"
+                fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M3.49691e-07 4L0.705 4.705L3.5 1.915L3.5 8L4.5 8L4.5 1.915L7.29 4.71L8 4L4 -3.49691e-07L3.49691e-07 4Z"
+                  fill="#9873FF" />
+              </svg>
+            </th>
+            <th class="table-header-item table-header-name">Фамилия Имя Отчество<svg class="icon" width="8" height="8"
+                viewbox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M3.49691e-07 4L0.705 4.705L3.5 1.915L3.5 8L4.5 8L4.5 1.915L7.29 4.71L8 4L4 -3.49691e-07L3.49691e-07 4Z"
+                  fill="#9873FF" />
+              </svg><span class="icon-name-text">А-Я</span></th>
+            <th class="table-header-item table-header-date-create">Дата и время создания<svg class="icon" width="8"
+                height="8" viewbox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M3.49691e-07 4L0.705 4.705L3.5 1.915L3.5 8L4.5 8L4.5 1.915L7.29 4.71L8 4L4 -3.49691e-07L3.49691e-07 4Z"
+                  fill="#9873FF" />
+              </svg></th>
+            <th class="table-header-item table-header-date-change">Последние изменения<svg class="icon" width="8"
+                height="8" viewbox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M3.49691e-07 4L0.705 4.705L3.5 1.915L3.5 8L4.5 8L4.5 1.915L7.29 4.71L8 4L4 -3.49691e-07L3.49691e-07 4Z"
+                  fill="#9873FF" />
+              </svg></th>
+            <th class="table-header-item table-header-contacts">Контакты</th>
+            <th class="table-header-item table-header-actions">Действия</th>
+          </tr>
+        </thead>
+        <tbody class="table-body" id="tableBody">
+        </tbody>
+      </table>
+    </div>
+    <button class="btn-add" type="button"><svg class="btn-add-icon" width="23" height="16" viewbox="0 0 23 16"
+        fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path
+          d="M14.5 8C16.71 8 18.5 6.21 18.5 4C18.5 1.79 16.71 0 14.5 0C12.29 0 10.5 1.79 10.5 4C10.5 6.21 12.29 8 14.5 8ZM5.5 6V3H3.5V6H0.5V8H3.5V11H5.5V8H8.5V6H5.5ZM14.5 10C11.83 10 6.5 11.34 6.5 14V16H22.5V14C22.5 11.34 17.17 10 14.5 10Z"
+          fill="#9873FF" />
+      </svg>Добавить клиента</button>
+
+  </main>
+  <div class="modal">
+    <form class="modal-change">
+      <button class="btn-close" type="button"></button>
+      <div class="modal-container">
+        <div class="modal-header">
+          <h2 class="reset-title modal-title">Изменить данные</h2>
+          <span class="modal-change-id"></span>
+        </div>
+        <label class="modal-label-add" for="surnameChange">
+          <input class="modal-input" required="" id="surnameChange" name="surname" type="text">
+          <div class="place_holder">Фамилия<span>*</span></div>
+        </label>
+        <label class="modal-label-add" for="nameChange">
+          <input class="modal-input" required="" id="nameChange" name="name" type="text">
+          <div class="place_holder">Имя<span>*</span></div>
+        </label>
+        <label class="modal-label-add" for="lastNameChange">
+          <input class="modal-input" required="" id="lastNameChange" name="lastName" type="text">
+          <div class="place_holder">Отчество</div>
+        </label>
+      </div>
+      <div class="modal-contact-add">
+        <div class="modal-container modal-container-without-select">
+          <ul class="reset-list modal-contacts-list">
+          </ul>
+          <button class="modal-contact-add-btn" id="modalChangeAddContact" type="button"><svg width="14" height="14"
+              viewbox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M7.00001 3.66667C6.63334 3.66667 6.33334 3.96667 6.33334 4.33333V6.33333H4.33334C3.96668 6.33333 3.66668 6.63333 3.66668 7C3.66668 7.36667 3.96668 7.66667 4.33334 7.66667H6.33334V9.66667C6.33334 10.0333 6.63334 10.3333 7.00001 10.3333C7.36668 10.3333 7.66668 10.0333 7.66668 9.66667V7.66667H9.66668C10.0333 7.66667 10.3333 7.36667 10.3333 7C10.3333 6.63333 10.0333 6.33333 9.66668 6.33333H7.66668V4.33333C7.66668 3.96667 7.36668 3.66667 7.00001 3.66667ZM7.00001 0.333332C3.32001 0.333332 0.333344 3.32 0.333344 7C0.333344 10.68 3.32001 13.6667 7.00001 13.6667C10.68 13.6667 13.6667 10.68 13.6667 7C13.6667 3.32 10.68 0.333332 7.00001 0.333332ZM7.00001 12.3333C4.06001 12.3333 1.66668 9.94 1.66668 7C1.66668 4.06 4.06001 1.66667 7.00001 1.66667C9.94001 1.66667 12.3333 4.06 12.3333 7C12.3333 9.94 9.94001 12.3333 7.00001 12.3333Z"
+                fill="#9873FF" />
+            </svg>Добавить контакт</button>
+        </div>
+      </div>
+      <div class="modal-container">
+        <p class="text-error"></p>
+        <button class="modal-change-btn-save" id="btnChangeSave" type="button">Сохранить</button>
+        <button class="modal-change-btn-delete" id="modalChangeBtnDelete" type="button">Удалить клиента</button>
+      </div>
+    </form>
+
+    <form class="modal-add">
+      <button class="btn-close" type="button"></button>
+      <div class="modal-container">
+        <div class="modal-header modal-header-add">
+          <h2 class="reset-title modal-title">Новый клиент</h2>
+        </div>
+        <label class="modal-label-add" for="surnameAdd">
+          <input class="modal-input" required="" id="surnameAdd" name="surname" type="text">
+          <div class="place_holder">Фамилия<span>*</span></div>
+        </label>
+        <label class="modal-label-add" for="firstNameAdd">
+          <input class="modal-input" required="" id="firstNameAdd" name="name" type="text">
+          <div class="place_holder">Имя<span>*</span></div>
+        </label>
+        <label class="modal-label-add" for="lastNameAdd">
+          <input class="modal-input" required="" id="lastNameAdd" name="lastName" type="text">
+          <div class="place_holder">Отчество</div>
+        </label>
+      </div>
+      <div class="modal-contact-add">
+        <div class="modal-container modal-container-without-select">
+          <ul class="reset-list modal-contacts-list" id="modalContactsList">
+          </ul>
+          <button class="modal-contact-add-btn" type="button"><svg width="14" height="14" viewbox="0 0 14 14"
+              fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M7.00001 3.66667C6.63334 3.66667 6.33334 3.96667 6.33334 4.33333V6.33333H4.33334C3.96668 6.33333 3.66668 6.63333 3.66668 7C3.66668 7.36667 3.96668 7.66667 4.33334 7.66667H6.33334V9.66667C6.33334 10.0333 6.63334 10.3333 7.00001 10.3333C7.36668 10.3333 7.66668 10.0333 7.66668 9.66667V7.66667H9.66668C10.0333 7.66667 10.3333 7.36667 10.3333 7C10.3333 6.63333 10.0333 6.33333 9.66668 6.33333H7.66668V4.33333C7.66668 3.96667 7.36668 3.66667 7.00001 3.66667ZM7.00001 0.333332C3.32001 0.333332 0.333344 3.32 0.333344 7C0.333344 10.68 3.32001 13.6667 7.00001 13.6667C10.68 13.6667 13.6667 10.68 13.6667 7C13.6667 3.32 10.68 0.333332 7.00001 0.333332ZM7.00001 12.3333C4.06001 12.3333 1.66668 9.94 1.66668 7C1.66668 4.06 4.06001 1.66667 7.00001 1.66667C9.94001 1.66667 12.3333 4.06 12.3333 7C12.3333 9.94 9.94001 12.3333 7.00001 12.3333Z"
+                fill="#9873FF" />
+            </svg>Добавить контакт</button>
+        </div>
+      </div>
+      <div class="modal-container">
+        <p class="text-error"></p>
+        <button class="modal-change-btn-save" id="btnAddSave" type="button">Сохранить</button>
+        <button class="modal-change-btn-exit" type="button">Отмена</button>
+      </div>
+    </form>
+    <div class="modal-delete">
+      <button class="btn-close" type="button"></button>
+      <h2 class="reset-title modal-delete-title">Удалить клиента</h2>
+      <p class="modal-delete-text">Вы действительно хотите удалить данного клиента?</p>
+      <button class="modal-change-btn-save" id="modalBtnDelete" type="button">Удалить</button>
+      <button class="modal-change-btn-exit" type="button">Отмена</button>
+    </div>
+  </div>
+</body>
+
+</html>
